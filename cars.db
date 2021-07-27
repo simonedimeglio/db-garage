@@ -1,0 +1,58 @@
+TRACCIA:
+Modellizzare la struttura di una tabella per
+memorizzare tutti i dati riguardanti delle auto usate 
+messe in vendita da un concessionario
+
+nome repo: db-first
+autore: Simone Di Meglio
+______________________________________________________
+
+name: cars
+
+Column                  Type                    Attributes                          Index
+
+id                      BIGINT UNSIGNED         AUTO_INCREMENT, NOT NULL, UNIQUE    PRIMARY KEY
+automaker               VARCHAR(150)            NOT NULL                            INDEX
+model                   VARCHAR(150)            NOT NULL                            INDEX
+generation              VARCHAR(100)            NULL
+vin                     VARCHAR(17)             NOT NULL, UNIQUE
+class                   VARCHAR(100)            NOT NULL
+launch_year             YEAR                    NOT NULL
+fuel_type               VARCHAR(100)            NOT NULL                            INDEX
+engine_type             VARCHAR(150)            NULL
+engine_displacement     VARCHAR(50)             NOT NULL
+engine_horsepower       VARCHAR(50)             NOT NULL
+gearbox                 VARCHAR(50)             NOT NULL 
+length                  FLOAT(6,2)              NOT NULL
+weigth                  FLOAT(6,2)              NOT NULL
+height                  FLOAT(6,2)              NOT NULL
+doors                   TINYINT                 NOT NULL 
+previous_owners         TINYINT                 NULL
+description             TEXT                    NULL
+picture                 VARCHAR(255)            NULL
+price                   FLOAT(7,2)              NOT NULL                            INDEX
+
+
+
+legenda/description of column keys 
+
+id                      unique id of cars
+automaker               name of automaker brand (ex Ford, Tesla, Jeep, Dodge etc.)
+model                   name of the model (ex Raptor, Model T, Wrangler, Nitro etc.)
+generation              (ex 2nd gen etc.)
+vin                     chassis number (unique alphanumeric code)
+class                   type of vehicle (ex suv, sedan, minivan, station-wagon etc.)
+launch_year             when the car was launched on the market
+fuel_type               type of power supply (ex gas, petrol, diesel etc.)
+engine_type             name of engine (ex Euro 6d Final etc.)           
+engine_displacement     engine displacement (italian = cilindrata - ex 2000cm^3)
+engine_horsepower       engine horsepower (italian = cavalli motore - ex 300cv)
+gearbox                 gearbox type (ex manual, automatic etc.) 
+length                  car's length
+weigth                  car's weigth
+height                  car's height
+doors                   numbers of doors
+previous_owners         numbers of possible previous owners
+description             description of cars (accessories, problems, characteristics, the condition in which it is found)
+picture                 main picture
+price                   selling price
